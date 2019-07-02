@@ -16,13 +16,12 @@ var path = require('path');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss')
 
 gulp.task('move-css',function(){
   return gulp.src(
       'src/less/*.css')
-  .pipe(autoprefixer({
-			browsers: ['last 2 version']
-		}))
+  .pipe(postcss([ autoprefixer() ]))
   .pipe(cleanCSS())
   .pipe(gulp.dest('build/css'));
 });
@@ -32,9 +31,7 @@ gulp.task('sass', function(){
 		.pipe(plumber())
 		.pipe(sourceMaps.init())
 		.pipe(sass())
-		.pipe(autoprefixer({
-			browsers: ['last 2 version']
-		}))
+		.pipe(postcss([ autoprefixer() ]))
 		.pipe(sourceMaps.write())
 		.pipe(gulp.dest('build/css'))
 		.pipe(browserSync.reload({stream: true}));
@@ -43,9 +40,6 @@ gulp.task('sass', function(){
 gulp.task('less', function () {
   return gulp.src('src/less/**/*.less')
     .pipe(less())
-    .pipe(autoprefixer({
-			browsers: ['last 2 version']
-		}))
     .pipe(concat('style.css'))
     .pipe(cleanCSS())
     .pipe(gulp.dest('build/css'))
