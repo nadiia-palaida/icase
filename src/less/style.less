@@ -1,3 +1,5 @@
+@import 'colors.less';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,4 +7,589 @@
 	list-style: none;
 	word-wrap: break-word;
 	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+a {
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+		color: @light-color;
+	}
+}
+
+button {
+	outline: none;
+}
+
+header {
+	background-color: @header-color;
+	padding-bottom: 1.5rem;
+
+	.menu {
+		
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			li {
+				margin-right: 1rem;
+				margin-top: 2rem;
+				font-size: 1.4rem;
+				text-transform: uppercase;
+
+				&:last-child {
+					&::after {
+						display: none;
+					}
+				}
+
+				&::after {
+					content: '';
+					display: inline-block;
+					margin-left: 1rem;
+					position: relative;
+					bottom: 15%;
+					width: 0.2rem;
+					height: 0.4rem;
+					border-radius:  50%;
+					background-color: @header-after;
+				}
+
+				a {
+					font-size: 1.4rem;
+					text-transform: uppercase;
+					font-weight: 600;
+					color: @light-color;
+				}
+
+			}
+		}
+	}
+}
+
+.sale {
+	background-color: @sale-color;
+	padding: 2rem 0;
+	text-align: center;
+
+	h5 {
+		color: @light-color;
+		font-size: 1.6rem;
+
+		a {
+			cursor: pointer;
+			color: @light-color;
+		}
+	}
+}
+
+.main {
+	padding: 13rem 0;
+	background: url(../img/bg-main.jpg) center;
+	background-size: cover;
+
+	h1 {
+		margin-bottom: 3rem;
+		font-size: 7.2rem;
+		color: @h1-color;
+	}
+
+	h2 {
+		margin-bottom: 2rem;
+		font-size: 4rem;
+		color: @h2-color;
+	}
+	
+
+	h3 {
+		display: inline-block;
+		margin-bottom: 2.5rem;
+		padding: 1rem 1rem 1.5rem 1rem;
+		font-size: 3.6rem;
+		font-weight: 300;
+		color: @light-color;
+		background-color: @sale-bg;
+	}
+
+	&-text {
+		p {
+			display: inline-block;
+			font-size: 1.6rem;
+			background-color: @light-color;
+		}
+
+		i {
+			font-size: 1.6rem;
+			margin-right: 0.8rem;
+
+			&.fa-truck {
+				font-size: 1.4rem;
+				margin-right: 0;
+			}
+		}
+	}
+
+	&-button {
+		margin-top: 5rem;
+		margin-left: 16rem;
+		padding: 1rem 2rem;
+		font-size: 3rem;
+		color: @light-color;
+		font-weight: 300;
+		background-color: @main-btn-bg;
+		border-radius: 5rem;
+		border: 0.1rem solid darken( @main-btn-bg, 10%);
+		border-bottom: 0.3rem solid darken( @main-btn-bg, 10%);
+
+		&:hover {
+			color: @light-color;
+		}
+	}
+}
+
+.case {
+	padding: 6rem 0;	
+
+	h2 {
+		font-size: 4.5rem;	
+		text-align: center;
+	}
+
+	&-category {
+		margin-top: 3rem;	
+		padding: 0 0.5rem 2rem 0.5rem;	
+		text-align: center;
+		border: 0.1rem solid @border-color;
+
+		img {
+			max-width: 30rem;
+			max-height: 18rem;
+		}
+
+		a.btn {
+			padding: 1rem 3rem;	
+			margin-top: 3rem;	
+			border-radius: 0.5rem;	
+			font-size: 1.8rem;	
+			font-weight: 700;	
+			background-color: @btn-color;
+			color: @light-color;
+			outline: none;
+			border: none;
+
+			&:focus {
+				border: none;
+				outline: none;
+				color: @light-color;
+			}
+
+			&:hover {
+				color: @light-color;
+				background-color: darken(@btn-color, 10%);
+			}
+		}
+	}
+}
+
+.advantages {
+	padding: 5rem 0;	
+	background-color: @advantages-bg;
+
+	h2 {
+		text-align: center;
+		font-size: 4rem;
+		text-transform: uppercase;
+	}
+
+	p.u-header {
+		font-size: 2rem;	
+		text-align: center;
+	}
+
+	&-item {
+		margin-top: 3rem;	
+		text-align: center;
+
+		img {
+			margin-bottom: 2rem;	
+		}
+
+		h5 {
+			font-size: 2rem;	
+			font-weight: 600;
+		}
+
+		p {
+			margin-top: 1rem;	
+			font-size: 1.5rem;	
+
+			span {
+				font-weight: bold;
+			}
+		}
+
+	}
+}
+
+.feedback {
+	padding: 4rem 0;
+
+	h2 {
+		margin-bottom: 1.5rem;
+		font-size: 4.5rem;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	p {
+		font-size: 2rem;
+		text-align: center;
+		margin-bottom: 5rem;
+	}
+
+	.slider {
+
+		&-item {
+			padding: 0 1.5rem;
+			img {
+				width: 100%;
+				height: auto;
+				
+			}
+		}
+	}
+}
+
+.delivery {
+
+	padding: 4rem 0;
+
+	
+
+	h2 {
+		margin-bottom: 2rem;
+		font-size: 4.5rem;
+		text-align: center;
+	}
+
+	p.u-header {
+		margin-bottom: 4rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	&-item {
+		position: relative;
+		text-align: center;
+
+		.line {
+			position: absolute;
+			left: -35%;
+			top: 4rem;
+			height: 0.1rem;
+			width: 70%;
+			background-color: #000;
+		}
+
+		img {
+			margin-bottom: 1rem;
+		}
+
+		h5 {
+			margin-bottom: 1rem;
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.footer {
+	padding: 2rem 0 2rem 0; 
+	background: @advantages-bg;
+	
+
+	a {
+		display: block;
+		font-size: 1.6rem;
+		font-weight: 500;
+		
+		&:hover {
+			color: #0056b3;
+		}
+
+	}
+
+	a.logo {
+		color: #000;
+		font-size: 1.6rem;
+		font-weight: 700;
+
+
+		h2 {
+			text-transform: uppercase;
+			
+		}
+	}
+
+	.insta {
+		text-align: center;
+		position: relative;
+		font-size: 2rem;
+		color: @insta-color;
+
+		&:hover {
+		
+			i {
+				background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+				color: @light-color;
+			}
+		}
+		
+		i {
+			text-align: center;
+			padding: 0.8rem 0.9rem;
+			border: 1px solid @insta-color;
+			border-radius: 50%;
+
+		}
+	}
+
+	.contacts {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.delivery {
+		padding: 1rem 0; 
+
+		h2 {
+			 margin-bottom: 0.5rem;
+		}
+
+		&-item {
+			.line {
+			display: none;
+			}
+
+			h5 {
+				font-size: 1.8rem;
+			}
+
+			p {
+				font-size: 1.4rem;	
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	header {
+		.menu {
+			padding-bottom: 0;
+			justify-content: flex-end;
+
+			button {
+				margin-top: 1rem;
+				outline: none;
+			}
+
+			ul {
+				justify-content: center;
+
+				li {
+					margin-top: 1rem;
+					font-size: 1.2rem;
+					font-weight: 700;
+
+					a {
+						font-size: 1.2rem;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+
+	.main {
+		padding: 5rem 0;
+
+		h1 {
+			font-size: 6rem;
+		}
+
+		h2 {
+			font-size: 3.5rem;
+		}
+
+		h3 {
+			font-size: 3rem;
+		}
+
+		button {
+			display: block;
+			margin-left: 0;	
+			margin: 2rem auto;
+			font-size: 2.5rem;
+		}
+	}
+
+	.case {
+		padding-top: 3rem;	
+
+		h2 {
+			font-size: 4rem;	
+		}
+
+		&-category {
+
+			img {
+				max-width: 20rem;
+			}
+
+			a.btn {
+				font-size: 1.6rem;	
+				padding: 1rem 1rem;	
+			}
+		}
+	}
+
+	.advantages {
+		padding: 3rem 0;	
+
+		p.u-header {
+			font-size: 1.8rem;	
+		}
+
+		h2 {
+			font-size: 3rem;	
+		}
+	}
+
+	.feedback {
+		padding: 2rem 0;
+
+		h2 {
+			font-size: 3.5rem;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	.delivery {
+		h2 {
+			font-size: 3rem;
+		}
+
+		p.u-header {
+			font-size: 1.8rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	.footer {
+		text-align: center;
+
+		a.logo {
+			font-size: 1.4rem;
+		}
+		
+		.insta {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.contacts {
+			justify-content: center;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+
+	header {
+		padding-bottom: 0.8rem;
+
+		.menu {
+
+			ul {
+				
+				li {
+					margin-top: 0.7rem;
+					font-size: 1.1rem;
+					font-weight: 700;
+
+					a {
+						font-size: 1.1rem;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+
+	.sale {
+		h5 {
+			font-size: 1.4rem;
+		}
+	}
+
+	.main {
+		padding: 3rem 0;
+
+		h1 {
+			margin-bottom: 1rem;	
+			font-size: 4rem;
+		}
+
+		h2 {
+			font-size: 2.5rem;
+		}
+
+		h3 {
+			font-size: 2.5rem;
+		}
+
+		p {
+			display: inline;
+		}
+
+		button {
+			font-size: 2.5rem;
+		}
+	}
+
+	.case {
+		&-category {
+
+			display: flex;	
+			flex-direction: column;
+
+			img {
+				max-width: 28rem;
+			}
+		}
+	}
+
+	.advantages {
+
+		&-item {
+			margin-top: 1rem;	
+		}
+	}
 }
