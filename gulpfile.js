@@ -21,7 +21,7 @@ const postcss = require('gulp-postcss')
 gulp.task('move-css',function(){
    return gulp.src(
       ['src/less/bootstrap.css', 'src/less/all.css', 'src/less/animate.css', 
-      'src/less/slick.css', 'src/less/slick-theme.css'])
+      'src/less/slick.css', 'src/less/slick-theme.css', 'src/less/lightgallery.css'])
   .pipe(concat("all_styles.css"))
   .pipe(postcss([ autoprefixer() ]))
   .pipe(cleanCSS())
@@ -65,11 +65,13 @@ gulp.task('html', function(){
 
 gulp.task('js', function(){
 	return gulp.src(['src/js/jQuery.js', 'src/js/bootstrap.js', 'src/js/script.js', 
-					'src/js/jquery.lazy.js', 'src/js/wow.js', 'src/js/slick.js'])
+					'src/js/jquery.lazy.js', 'src/js/wow.js', 'src/js/slick.js',
+					'src/js/lightgallery.js', 'src/js/lg-fullscreen.js', 
+					'src/js/lg-thumbnail.js'])
 		.pipe(concat('all.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('build/js'))
-		.pipe(browserSync.reload({stream: true}));
+		.pipe(browserSync.reload({stream: true}));	
 });
 
 gulp.task('images', function(){

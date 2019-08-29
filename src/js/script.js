@@ -1,3 +1,9 @@
+	
+//LIGHTSLIDER
+$('#aniimated-thumbnials').lightGallery({
+    thumbnail:true
+}); 
+
 	//LAZY LOAD
     $(function() {
         $('.lazy').Lazy();
@@ -37,3 +43,5 @@ $(document).ready(function(){
     ]
   });
 });
+
+
