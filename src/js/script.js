@@ -1,7 +1,8 @@
 	
 //LIGHTSLIDER
 $('#aniimated-thumbnials').lightGallery({
-    thumbnail:true
+    thumbnail:true,
+    pager: true
 }); 
 
 	//LAZY LOAD
@@ -45,3 +46,24 @@ $(document).ready(function(){
 });
 
 
+// add +1 and remove -1 good in catalog
+
+document.querySelectorAll('.minus').forEach(function(element) {
+	element.onclick = removeOne;
+});
+
+document.querySelectorAll('.plus').forEach(function(element) {
+	let plus = element.value;
+});
+
+document.querySelectorAll('.count-input').forEach(function(element) {
+	let countInput = element.value;
+});
+
+function removeOne() {
+	countInput = countInput - 1;
+
+	if(countInput < 0) {
+		countInput = 0;
+	}
+};	

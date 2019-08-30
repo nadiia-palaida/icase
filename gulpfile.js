@@ -64,10 +64,10 @@ gulp.task('html', function(){
 });
 
 gulp.task('js', function(){
-	return gulp.src(['src/js/jQuery.js', 'src/js/bootstrap.js', 'src/js/script.js', 
+	return gulp.src(['src/js/jQuery.js', 'src/js/bootstrap.js',  
 					'src/js/jquery.lazy.js', 'src/js/wow.js', 'src/js/slick.js',
-					'src/js/lightgallery.js', 'src/js/lg-fullscreen.js', 
-					'src/js/lg-thumbnail.js'])
+					'src/js/lightgallery.js', 'src/js/lg-pager.js', 'src/js/lg-fullscreen.js', 
+					'src/js/lg-thumbnail.js', 'src/js/script.js'])
 		.pipe(concat('all.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('build/js'))

@@ -1,0 +1,176 @@
+@import 'colors.less';
+
+.list {
+	font-size: 1.6rem;
+
+	li {
+		margin-bottom: 1rem;
+
+		&::before {
+			content: '';
+			display: inline-block;
+			margin-right: 1rem;
+			width: 1rem;
+			height: 1rem;
+			background-color: @drop-color;
+			border-radius: 50%;
+		}
+	}
+}
+
+.drop-btn {
+	margin-top: 2rem;
+	display: inline-block;
+	padding: 1.5rem;
+	font-size: 1.7rem;
+	font-weight: 600;
+	color: @light-color;
+	background-color: @drop-color;
+	border-radius: 0.7rem;
+
+	&:hover {
+		background-color: darken(@drop-color, 10%);
+	}
+}
+
+
+
+.main-title {
+
+	.title {
+		background: url(../img/dropship/bg.jpg) center no-repeat;
+		background-size: cover;
+
+		&-bg {
+			background-color: rgba(0, 0, 0, .6);
+			padding-top: 13rem;
+			padding-bottom: 10rem;
+
+			h1 {
+				font-size: 4rem;
+				color: @light-color;
+				text-align: center;
+			}
+		}
+	}
+
+	.drop-icon {
+		margin: 4rem 0;
+		text-align: center;
+
+		img {
+			width: 13rem;
+			height: 13rem;
+		}
+	}
+}
+
+.drop-text {
+
+	h4 {
+		margin-bottom: 1rem;
+		font-size: 2.5rem;
+		text-align: center;
+	}
+
+	p {
+		font-size: 1.6rem;
+	}
+
+	.list-title {
+		margin-top: 1rem;
+	}
+
+}
+
+.drop-schema {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	p {
+		margin-bottom: 3rem;
+		font-size: 1.7rem;
+	}
+}
+
+.stage {
+	padding-bottom: 5rem;
+
+	.list-title {
+		margin-bottom: 0.5rem;
+		font-size: 1.7rem;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.drop-schema {
+
+		img {
+			max-width: 90rem;
+		}
+	}
+}
+@media screen and (max-width: 992px) {
+
+	.drop-btn {
+		display: block;
+		text-align: center;
+	}
+
+	.drop-schema {
+		text-align: center;
+
+		img {
+			max-width: 60rem;
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	
+	.main-title {
+
+		.title {
+
+			&-bg {
+				padding: 4rem;
+
+				h1 {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+
+	.drop-schema {
+		text-align: center;
+
+		img {
+			max-width: 50rem;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	
+	.main-title {
+
+		.title {
+
+			&-bg {
+				padding: 4rem;
+				
+				h1 {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	.drop-schema {
+		text-align: center;
+
+		img {
+			max-width: 30rem;
+		}
+	}
+}
